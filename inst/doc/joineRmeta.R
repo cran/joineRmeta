@@ -167,10 +167,8 @@ summary(joineRmodels[[1]])
 #  help("joineRfits2", package = "joineRmeta")
 
 ## -------------------------------------------------------------------------------------------------
-joineRmodels2 <- joineRfits2[c("joineRfit6", "joineRfit7", "joineRfit8", 
-                               "joineRfit9", "joineRfit10")]
-joineRmodels2SE <- joineRfits2[c("joineRfit6SE", "joineRfit7SE", "joineRfit8SE", 
-                                 "joineRfit9SE", "joineRfit10SE")]
+joineRmodels2 <- joineRfits2[c("joineRfit6", "joineRfit7", "joineRfit8")]
+joineRmodels2SE <- joineRfits2[c("joineRfit6SE", "joineRfit7SE", "joineRfit8SE")]
 
 ## -------------------------------------------------------------------------------------------------
 summary(joineRmodels2[[1]])
@@ -211,7 +209,8 @@ MAjoineRfits2 <- jointmeta2(fits = c(joineRmodels[1:3], joineRmodels2[1:2]),
                             SE = c(joineRmodelsSE[1:3],joineRmodels2SE[1:2]), 
                             longpar = c("time", "treat1"), survpar = "treat1", 
                             assoc = TRUE, 
-                            studynames = c("Study 1","Study 2", "Study 3"))
+                            studynames = c("Study 1","Study 2", "Study 3", 
+                                           "Study 4", "Study 5"))
 
 ## -------------------------------------------------------------------------------------------------
 MAJMfits <- jointmeta2(fits = JMfits, longpar = c("time", "treat1"), 
@@ -227,13 +226,15 @@ MAJMfits2 <- jointmeta2(fits = JMfits2, longpar = c("time", "treat1"),
 MAtest <- jointmeta2(fits = c(JMfits2[1:3], JMfits[1:2]), 
                      longpar = c("time", "treat1"), 
                      survpar = "treat1", assoc = TRUE, 
-                     studynames = c("Study 1","Study 2", "Study 3"))
+                     studynames = c("Study 1","Study 2", "Study 3", 
+                                    "Study 4", "Study 5"))
 
 ## ---- error = TRUE--------------------------------------------------------------------------------
 MAtest <- jointmeta2(fits = c(JMfits2[1:3], joineRfits[1:2]), 
                      longpar = c("time", "treat1"), 
                      survpar = "treat1", assoc = TRUE, 
-                     studynames = c("Study 1","Study 2", "Study 3"))
+                     studynames = c("Study 1","Study 2", "Study 3", 
+                                    "Study 4", "Study 5"))
 
 ## ---- eval=FALSE----------------------------------------------------------------------------------
 #  help("jointmeta1", package = "joineRmeta")
@@ -354,7 +355,7 @@ formula(onestagefit2, type = "Rand_stud")
 ## ---- eval=FALSE----------------------------------------------------------------------------------
 #  onestagefit3SE <- jointmetaSE(fitted = onestagefit3, n.boot = 200,
 #                                overalleffects = list(long = list(c("treat1", "treat1:study2"),
-#                                                                  c("treat1", "treat1:study3")))))
+#                                                                  c("treat1", "treat1:study3"))))
 
 ## -------------------------------------------------------------------------------------------------
 #extract the saved model fit and bootstrap results
@@ -396,8 +397,8 @@ rancov(fitted = onestagefit4, type = "study")
 ## ---- eval=FALSE----------------------------------------------------------------------------------
 #  ###CODE NOT RUN
 #  #to extract the results from a separate longitudinal model
-#  fitted$sepests$longests$modelfit
+#  modelfit$sepests$longests$modelfit
 #  
 #  #to extract the results from a separate survival model
-#  fitted$sepests$survests$modelfit
+#  modelfit$sepests$survests$modelfit
 

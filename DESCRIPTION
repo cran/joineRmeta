@@ -1,7 +1,7 @@
 Package: joineRmeta
 Type: Package
 Title: Joint Modelling for Meta-Analytic (Multi-Study) Data
-Version: 0.1.1
+Version: 0.1.2
 Authors@R: c(
     person("Maria", "Sudell", email = "mesudell@liverpool.ac.uk", 
     role = c("cre", "aut"),
@@ -25,16 +25,16 @@ BugReports: https://github.com/mesudell/joineRmeta/issues
 LazyData: true
 Depends: R (>= 3.3.0), lme4, survival, JM
 Imports: ggplot2, grid, gridExtra, gtools, joineR, MASS, meta, msm,
-        nlme, statmod, stats, Matrix, utils
-RoxygenNote: 6.0.1
+        statmod, stats, Matrix, utils
+RoxygenNote: 7.0.2
 Suggests: knitr, rmarkdown
 VignetteBuilder: knitr
 NeedsCompilation: no
-Packaged: 2018-03-02 15:46:39 UTC; mesudell
+Packaged: 2020-01-24 13:51:42 UTC; mesudell
 Author: Maria Sudell [cre, aut] (<https://orcid.org/0000-0002-7919-4981>),
   Ruwanthi Kolamunnage-Dona [aut]
     (<https://orcid.org/0000-0003-3886-6208>),
   Catrin Tudur Smith [aut]
 Maintainer: Maria Sudell <mesudell@liverpool.ac.uk>
 Repository: CRAN
-Date/Publication: 2018-03-09 12:41:26 UTC
+Date/Publication: 2020-01-24 14:20:02 UTC
